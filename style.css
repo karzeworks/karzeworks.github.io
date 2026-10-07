@@ -56,13 +56,27 @@ body {
   cursor: pointer;
 }
 
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 480px) 1fr;
+}
+
 main {
   width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
   padding: 16px;
-  flex: 1;
 }
+
+/* 廣告：只放在周邊空白處，不浮動、不遮擋內容 */
+.ad-rail {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+.ad-rail .ad-slot { position: sticky; top: 16px; align-self: flex-start; }
+.ad-slot iframe { display: block; border: 0; }
+.ad-bottom { display: flex; justify-content: center; margin-top: 8px; }
+.ad-slot[hidden] { display: none; }
 
 .card {
   background: var(--card);
@@ -144,6 +158,27 @@ footer {
   font-size: .85rem;
   padding: 8px 16px max(16px, env(safe-area-inset-bottom));
 }
+footer p { margin: 4px 0 0; }
+a { color: var(--brand); }
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+.home h1 { font-size: 1.2rem; margin: 0; }
+
+.page {
+  flex: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.prose { line-height: 1.75; }
+.prose h2 { margin-top: 0; }
+.prose h3 { margin: 1.5em 0 .4em; }
+.prose li { margin: .25em 0; }
 
 dialog {
   width: min(440px, calc(100vw - 32px));

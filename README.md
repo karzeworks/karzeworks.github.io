@@ -16,19 +16,14 @@
 | DailyNeed | (Goal − MTD) / 剩餘天數（月底最後一天顯示「月底已到」） |
 | 今日達標所需 | Goal / 當月天數 × 已過天數 − MTD |
 
-## 部署到 GitHub Pages
-1. 在 GitHub 建立新的 repository（例如 `wg-calculator`），設為 Public。
-2. 將本資料夾內容推上去：
-   ```bash
-   git init
-   git add .
-   git commit -m "WG小工具網頁版"
-   git branch -M main
-   git remote add origin https://github.com/<帳號>/wg-calculator.git
-   git push -u origin main
-   ```
-3. 到 repository 的 **Settings → Pages**，Source 選 **Deploy from a branch**，Branch 選 `main` / `/ (root)`，按 Save。
-4. 稍待片刻後即可在 `https://<帳號>.github.io/wg-calculator/` 使用。
+## 網站與部署
+- 網址：https://karzeworks.github.io/ （repo `karzeworks/karzeworks.github.io`，`main` 分支根目錄）
+- 推送到 `main` 後 GitHub Pages 會自動重新部署。
+
+## 廣告（Google AdSense）
+- 每頁 `<head>` 已放 AdSense 驗證碼，根目錄有 `ads.txt`。
+- 廣告版位只在周邊空白處：寬螢幕左右兩側 160×600、窄螢幕計算結果下方 300×250。
+- 審核通過後到 AdSense「廣告 → 依廣告單元」建立固定尺寸的多媒體廣告，把 `data-ad-slot` 填進 `ads.js` 的 `AD_SLOTS`；不要開啟「自動廣告」，以免出現插頁或浮動廣告。
 
 ## 本機預覽
 ```bash
