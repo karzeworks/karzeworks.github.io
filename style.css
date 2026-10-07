@@ -59,11 +59,33 @@ a { color: var(--brand); }
 .prose h3 { margin: 1.5em 0 .4em; }
 .prose li { margin: .25em 0; }
 
-.projects { list-style: none; padding: 0; margin: 0; }
-.projects li { display: flex; gap: 12px; align-items: flex-start; }
-.projects img { border-radius: 10px; display: block; }
-.projects h3 { margin: 0; }
-.projects p { margin: 4px 0 0; color: var(--muted); }
+.intro h2 { margin: 8px 0 4px; }
+.intro p { margin: 0 0 16px; color: var(--muted); }
+
+.project { display: flex; gap: 16px; align-items: flex-start; }
+.project img { border-radius: 14px; display: block; flex: 0 0 auto; }
+.project h3 { margin: 0; font-size: 1.15rem; }
+.project p { margin: 6px 0 0; color: var(--muted); line-height: 1.6; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.button {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.button.secondary {
+  background: transparent;
+  color: var(--brand);
+  border: 1px solid var(--brand);
+}
+
+@media (max-width: 480px) {
+  .project { flex-direction: column; }
+}
 
 footer {
   text-align: center;
