@@ -1,20 +1,23 @@
 :root {
-  --brand: #ef4135;
-  --bg: #f6f4f3;
-  --card: #ffffff;
-  --text: #1f1d1c;
-  --muted: #6f6a68;
-  --border: #ddd7d5;
+  --paper: #f3f0e8;
+  --surface: #fbfaf6;
+  --ink: #16181d;
+  --muted: #5e6068;
+  --line: #d9d4c7;
+  --accent: #2346d1;
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #161414;
-    --card: #221f1f;
-    --text: #f3efee;
-    --muted: #a8a19f;
-    --border: #3a3534;
+    --paper: #121317;
+    --surface: #1a1c21;
+    --ink: #ecebe6;
+    --muted: #9b9da5;
+    --line: #2d3038;
+    --accent: #8ea4ff;
   }
 }
 
@@ -25,72 +28,95 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
 }
 
-a { color: var(--brand); }
+a { color: var(--accent); }
 
 .top {
-  padding: 12px 16px;
-  background: var(--brand);
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 0;
 }
-.home { color: #fff; text-decoration: none; }
-.home h1 { font-size: 1.2rem; margin: 0; }
+.home { color: var(--ink); text-decoration: none; }
+.wordmark {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
 
 .page {
   flex: 1;
   width: 100%;
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 16px;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px;
+.intro { padding: 32px 0 28px; }
+.intro h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  line-height: 1.3;
 }
+.intro p { margin: 12px 0 0; color: var(--muted); }
 
-.prose { line-height: 1.75; }
-.prose h2 { margin-top: 0; }
-.prose h3 { margin: 1.5em 0 .4em; }
-.prose li { margin: .25em 0; }
+/* 每一列都是完整的連結，整列可點擊 */
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.entries li { border-bottom: 1px solid var(--line); }
 
-.intro h2 { margin: 8px 0 4px; }
-.intro p { margin: 0 0 16px; color: var(--muted); }
-
-.project { display: flex; gap: 16px; align-items: flex-start; }
-.project img { border-radius: 14px; display: block; flex: 0 0 auto; }
-.project h3 { margin: 0; font-size: 1.15rem; }
-.project p { margin: 6px 0 0; color: var(--muted); line-height: 1.6; }
-
-.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.button {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 10px;
-  background: var(--brand);
-  color: #fff;
-  font-weight: 600;
+.entry {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 12px;
+  color: inherit;
   text-decoration: none;
+  border-radius: 12px;
+  transition: background-color .15s;
 }
-.button.secondary {
-  background: transparent;
-  color: var(--brand);
-  border: 1px solid var(--brand);
-}
+.entry:hover { background: var(--surface); }
+.entry:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.entry img { flex: 0 0 auto; border-radius: 14px; display: block; }
 
-@media (max-width: 480px) {
-  .project { flex-direction: column; }
+.entry-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.entry-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; }
+.entry-desc { color: var(--muted); line-height: 1.6; font-size: .95rem; }
+
+.entry-arrow {
+  flex: 0 0 auto;
+  font-size: 1.4rem;
+  color: var(--accent);
+  transition: transform .15s;
 }
+.entry:hover .entry-arrow { transform: translateX(4px); }
+
+/* 隱私權政策等內文頁 */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+.prose { line-height: 1.8; }
+.prose h2 { margin-top: 0; font-family: var(--serif); }
+.prose h3 { margin: 1.5em 0 .4em; font-family: var(--serif); }
+.prose li { margin: .25em 0; }
 
 footer {
   text-align: center;
   color: var(--muted);
   font-size: .85rem;
-  padding: 8px 16px 16px;
+  padding: 24px 16px;
 }
 footer p { margin: 4px 0 0; }

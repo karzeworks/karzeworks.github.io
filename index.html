@@ -3,33 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KarzeWorks 的網頁工具與專案導覽。">
+  <meta name="description" content="KarzeWorks 的網頁工具導覽。">
   <title>KarzeWorks</title>
   <link rel="stylesheet" href="style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7288600499250923" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="top">
-    <a href="/" class="home"><h1>KarzeWorks</h1></a>
+    <a href="/" class="home"><span class="wordmark">KarzeWorks</span></a>
   </header>
 
   <main class="page">
     <section class="intro">
-      <h2>歡迎來到 KarzeWorks</h2>
-      <p>這裡收錄我製作的網頁工具，全部免安裝、直接在瀏覽器中使用。</p>
+      <h1>免安裝的小工具，<br>打開就能用。</h1>
+      <p>點選下方任一項目開始使用。</p>
     </section>
 
-    <section class="card project">
-      <img src="/wg-calculator/icons/icon-192.png" alt="" width="72" height="72">
-      <div>
-        <h3>WG小工具</h3>
-        <p>業績進度計算機：輸入本月累計業績與目標，估算月底預計業績、達成率，以及每天需要多少業績才能達標。</p>
-        <div class="actions">
-          <a class="button" href="/wg-calculator/">開啟計算機</a>
-          <a class="button secondary" href="/wg-calculator/about.html">使用說明</a>
-        </div>
-      </div>
-    </section>
+    <ul class="entries">
+      <li>
+        <a class="entry" href="/wg-calculator/">
+          <img src="/wg-calculator/icons/icon-192.png" alt="" width="56" height="56">
+          <span class="entry-text">
+            <span class="entry-title">WG計算機</span>
+            <span class="entry-desc">輸入本月累計業績與目標，估算月底預計業績、達成率，以及每天需要多少業績才能達標。</span>
+          </span>
+          <span class="entry-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
   </main>
 
   <footer>
