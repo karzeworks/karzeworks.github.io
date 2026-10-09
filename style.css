@@ -95,6 +95,36 @@ a { color: var(--accent); }
 }
 .entry:hover .entry-arrow { transform: translateX(4px); }
 
+/* 首頁列表下方的次要資訊：字小、顏色淡，不搶項目列表 */
+.aside-block { margin-top: 40px; }
+.label {
+  margin: 0 0 10px;
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  color: var(--muted);
+}
+.aside-block p { margin: 0 0 10px; color: var(--muted); line-height: 1.8; font-size: .95rem; }
+
+.reads, .log { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.reads li, .log li { border-bottom: 1px solid var(--line); }
+.reads a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 8px;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 8px;
+}
+.reads a:hover { background: var(--surface); }
+.reads a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.reads small { color: var(--muted); white-space: nowrap; }
+.log li { display: flex; gap: 16px; padding: 10px 8px; color: var(--muted); font-size: .9rem; }
+.log time { flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+
 /* 隱私權政策等內文頁 */
 .card {
   background: var(--surface);
